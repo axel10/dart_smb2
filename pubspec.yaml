@@ -27,10 +27,14 @@ environment:
   sdk: ^3.10.0
 
 dependencies:
-  code_assets: ^2.1.0
+  # Widened from ^2.1.0: irondash_engine_context (and native_toolchain_rust)
+  # still require ^1.0.0, and 1.2.x has the same CodeAsset/userDefines API
+  # this hook uses. The 2.0.0 breaking change (==/hashCode on OS and
+  # Architecture) does not affect hook/build.dart.
+  code_assets: '>=1.0.0 <3.0.0'
   crypto: ^3.0.7
   ffi: ^2.1.3
-  hooks: ^2.2.0
+  hooks: ^2.0.2
   meta: ^1.15.0
 
 dev_dependencies:
